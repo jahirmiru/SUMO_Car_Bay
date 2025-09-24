@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-09-07 01:59:40 by Eclipse SUMO netconvert Version 1.23.1
+<netconvertConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="corridor.nod.xml"/>
+        <edge-files value="corridor.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="corridor.net.xml"/>
+    </output>
+
+</netconvertConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,10.00" convBoundary="0.00,0.00,500.00,10.00" origBoundary="0.00,-10.00,500.00,0.00" projParameter="!"/>
+
+    <edge id=":bay_end_0" function="internal">
+        <lane id=":bay_end_0_0" index="0" speed="6.43" length="8.79" shape="276.60,-0.10 276.95,2.22 278.00,3.87 279.75,4.87 282.20,5.20"/>
+    </edge>
+    <edge id=":bay_end_1" function="internal">
+        <lane id=":bay_end_1_0" index="0" speed="13.89" length="11.20" shape="271.00,5.20 282.20,5.20"/>
+        <lane id=":bay_end_1_1" index="1" speed="13.89" length="11.20" shape="271.00,8.40 282.20,8.40"/>
+    </edge>
+    <edge id=":bay_end_branch_0" function="internal">
+        <lane id=":bay_end_branch_0_0" index="0" speed="3.77" length="2.34" shape="275.00,-1.60 275.70,-1.52 276.20,-1.28 276.50,-0.87 276.60,-0.30"/>
+    </edge>
+    <edge id=":bay_start_0" function="internal">
+        <lane id=":bay_start_0_0" index="0" speed="6.43" length="8.79" shape="217.80,5.20 220.25,4.87 222.00,3.87 223.05,2.22 223.40,-0.10"/>
+    </edge>
+    <edge id=":bay_start_1" function="internal">
+        <lane id=":bay_start_1_0" index="0" speed="13.89" length="11.20" shape="217.80,5.20 229.00,5.20"/>
+        <lane id=":bay_start_1_1" index="1" speed="13.89" length="11.20" shape="217.80,8.40 229.00,8.40"/>
+    </edge>
+    <edge id=":bay_start_branch_0" function="internal">
+        <lane id=":bay_start_branch_0_0" index="0" speed="3.77" length="2.34" shape="223.40,-0.30 223.50,-0.87 223.80,-1.27 224.30,-1.52 225.00,-1.60"/>
+    </edge>
+    <edge id=":end_0" function="internal">
+        <lane id=":end_0_0" index="0" speed="3.65" length="4.67" shape="500.00,8.40 501.20,9.20 501.60,10.00 501.20,10.80 500.00,11.60"/>
+    </edge>
+    <edge id=":start_0" function="internal">
+        <lane id=":start_0_0" index="0" speed="3.65" length="4.67" shape="0.00,11.60 -1.20,10.80 -1.60,10.00 -1.20,9.20 0.00,8.40"/>
+    </edge>
+
+    <edge id="connector_in" from="bay_start" to="bay_start_branch" priority="-1">
+        <lane id="connector_in_0" index="0" speed="13.89" length="0.20" shape="223.40,-0.10 223.40,-0.30"/>
+    </edge>
+    <edge id="connector_out" from="bay_end_branch" to="bay_end" priority="-1">
+        <lane id="connector_out_0" index="0" speed="13.89" length="0.20" shape="276.60,-0.30 276.60,-0.10"/>
+    </edge>
+    <edge id="dropoff_bay" from="bay_start_branch" to="bay_end_branch" priority="-1">
+        <lane id="dropoff_bay_0" index="0" speed="13.89" length="50.00" shape="225.00,-1.60 275.00,-1.60"/>
+    </edge>
+    <edge id="main_road_after" from="bay_end" to="end" priority="-1">
+        <lane id="main_road_after_0" index="0" speed="13.89" length="217.80" shape="282.20,5.20 500.00,5.20"/>
+        <lane id="main_road_after_1" index="1" speed="13.89" length="217.80" shape="282.20,8.40 500.00,8.40"/>
+    </edge>
+    <edge id="main_road_before" from="start" to="bay_start" priority="-1">
+        <lane id="main_road_before_0" index="0" speed="13.89" length="217.80" shape="0.00,5.20 217.80,5.20"/>
+        <lane id="main_road_before_1" index="1" speed="13.89" length="217.80" shape="0.00,8.40 217.80,8.40"/>
+    </edge>
+    <edge id="main_road_middle" from="bay_start" to="bay_end" priority="-1">
+        <lane id="main_road_middle_0" index="0" speed="13.89" length="42.00" shape="229.00,5.20 271.00,5.20"/>
+        <lane id="main_road_middle_1" index="1" speed="13.89" length="42.00" shape="229.00,8.40 271.00,8.40"/>
+    </edge>
+    <edge id="main_road_rev" from="end" to="start" priority="-1">
+        <lane id="main_road_rev_0" index="0" speed="13.89" length="500.00" shape="500.00,14.80 0.00,14.80"/>
+        <lane id="main_road_rev_1" index="1" speed="13.89" length="500.00" shape="500.00,11.60 0.00,11.60"/>
+    </edge>
+
+    <junction id="bay_end" type="priority" x="275.00" y="10.00" incLanes="connector_out_0 main_road_middle_0 main_road_middle_1" intLanes=":bay_end_0_0 :bay_end_1_0 :bay_end_1_1" shape="282.20,10.00 282.20,3.60 278.20,-0.40 275.00,-0.40 271.00,3.60 271.00,10.00">
+        <request index="0" response="110" foes="110" cont="0"/>
+        <request index="1" response="000" foes="001" cont="0"/>
+        <request index="2" response="000" foes="001" cont="0"/>
+    </junction>
+    <junction id="bay_end_branch" type="priority" x="275.00" y="0.00" incLanes="dropoff_bay_0" intLanes=":bay_end_branch_0_0" shape="275.00,0.00 278.20,0.00 277.84,-1.78 277.40,-2.40 276.78,-2.84 275.98,-3.11 275.00,-3.20">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="bay_start" type="priority" x="225.00" y="10.00" incLanes="main_road_before_0 main_road_before_1" intLanes=":bay_start_0_0 :bay_start_1_0 :bay_start_1_1" shape="229.00,10.00 229.00,3.60 225.00,-0.40 221.80,-0.40 217.80,3.60 217.80,10.00">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="bay_start_branch" type="priority" x="225.00" y="0.00" incLanes="connector_in_0" intLanes=":bay_start_branch_0_0" shape="221.80,0.00 225.00,0.00 225.00,-3.20 223.22,-2.84 222.60,-2.40 222.16,-1.78 221.89,-0.98">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="end" type="priority" x="500.00" y="10.00" incLanes="main_road_after_0 main_road_after_1" intLanes=":end_0_0" shape="500.00,10.00 500.00,3.60 500.00,10.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+    <junction id="start" type="priority" x="0.00" y="10.00" incLanes="main_road_rev_0 main_road_rev_1" intLanes=":start_0_0" shape="0.00,10.00 0.00,16.40 0.00,10.00">
+        <request index="0" response="0" foes="0" cont="0"/>
+    </junction>
+
+    <connection from="connector_in" to="dropoff_bay" fromLane="0" toLane="0" via=":bay_start_branch_0_0" dir="l" state="M"/>
+    <connection from="connector_out" to="main_road_after" fromLane="0" toLane="0" via=":bay_end_0_0" dir="r" state="m"/>
+    <connection from="dropoff_bay" to="connector_out" fromLane="0" toLane="0" via=":bay_end_branch_0_0" dir="l" state="M"/>
+    <connection from="main_road_after" to="main_road_rev" fromLane="1" toLane="1" via=":end_0_0" dir="t" state="M"/>
+    <connection from="main_road_before" to="connector_in" fromLane="0" toLane="0" via=":bay_start_0_0" dir="r" state="M"/>
+    <connection from="main_road_before" to="main_road_middle" fromLane="0" toLane="0" via=":bay_start_1_0" dir="s" state="M"/>
+    <connection from="main_road_before" to="main_road_middle" fromLane="1" toLane="1" via=":bay_start_1_1" dir="s" state="M"/>
+    <connection from="main_road_middle" to="main_road_after" fromLane="0" toLane="0" via=":bay_end_1_0" dir="s" state="M"/>
+    <connection from="main_road_middle" to="main_road_after" fromLane="1" toLane="1" via=":bay_end_1_1" dir="s" state="M"/>
+    <connection from="main_road_rev" to="main_road_before" fromLane="1" toLane="1" via=":start_0_0" dir="t" state="M"/>
+
+    <connection from=":bay_end_0" to="main_road_after" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":bay_end_1" to="main_road_after" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":bay_end_1" to="main_road_after" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":bay_end_branch_0" to="connector_out" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":bay_start_0" to="connector_in" fromLane="0" toLane="0" dir="r" state="M"/>
+    <connection from=":bay_start_1" to="main_road_middle" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":bay_start_1" to="main_road_middle" fromLane="1" toLane="1" dir="s" state="M"/>
+    <connection from=":bay_start_branch_0" to="dropoff_bay" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":end_0" to="main_road_rev" fromLane="0" toLane="1" dir="t" state="M"/>
+    <connection from=":start_0" to="main_road_before" fromLane="0" toLane="1" dir="t" state="M"/>
+
+</net>

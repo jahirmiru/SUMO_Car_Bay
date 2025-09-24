@@ -1,0 +1,4 @@
+<options>
+    <lanechange.duration>1.0</lanechange.duration>
+    <lanechange.cooperative>0</lanechange.cooperative>
+</options>

@@ -1,0 +1,26 @@
+<routes>
+    <!-- Vehicle type definition -->
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="5" maxSpeed="70"/>
+
+    <!-- Route Definitions -->
+    <!-- Route for traffic from start to end directly -->
+    <route id="start_to_end_direct" edges="main_road_before main_road_middle main_road_after"/>
+    
+    <!-- Route for traffic from start to end via the dropoff bay -->
+    <route id="start_to_end_bay" edges="main_road_before connector_in dropoff_bay connector_out main_road_after"/>
+    
+    <!-- Route for traffic from end to start -->
+    <route id="end_to_start" edges="main_road_rev"/>
+
+    <!-- Vehicle Flows -->
+    <!-- 800 vehicles from end to start -->
+    <flow id="flow_end_to_start" type="car" route="end_to_start" begin="0" end="3600" number="800" />
+
+    <!-- 700 vehicles from start to end directly -->
+    <flow id="flow_start_to_end_direct" type="car" route="start_to_end_direct" begin="0" end="3600" number="700" />
+
+    <!-- 100 vehicles from start to end via the dropoff bay with a 10-second stop -->
+    <flow id="flow_start_to_end_bay" type="car" route="start_to_end_bay" begin="0" end="3600" number="100">
+        <stop lane="dropoff_bay_0" duration="10.00" startPos="25" endPos="35"/>
+    </flow>
+</routes>
